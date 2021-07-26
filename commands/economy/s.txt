@@ -1,0 +1,2 @@
+const day = new Date(Date.now())
+`Reset in ${Math.abs(day.getUTCHours() - 24)} hours, ${Math.abs(day.getUTCMinutes() - 60)} minutes and ${Math.abs(day.getUTCSeconds() - 60)} seconds`
