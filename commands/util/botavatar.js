@@ -8,7 +8,7 @@ module.exports = {
     category: 'utility',
     nsfw: false,
     disabled: true,
-    permissions: 'ADMINISTATOR',
+    permissions: 'ADMINISTRATOR',
     execute(message, args){
         let name = args.join(" ");
         try{

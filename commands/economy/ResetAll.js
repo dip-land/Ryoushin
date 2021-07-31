@@ -9,18 +9,14 @@ module.exports = {
     category: 'economy',
     nsfw: false,
     disabled: true,
-    permissions: 'ADMINISTATOR',
+    permissions: 'ADMINISTRATOR',
     execute(message, args){
         data.users = {}
         message.client.guilds.fetch('864435982858321920').then(guild =>{
             guild.members.fetch().then(members => {
                 members.forEach(member => {
-                    if(member.bot){return;}
-                    data.users[member.user.id] = {
-                        money : 10000,
-                        last_stolen : Date.now(),
-                        daily_claimed : false
-                    }
+                    if(member.bot) return;
+                    data.users[member.user.id] = {money : 10000, last_stolen : Date.now(), daily_claimed : false}
                 })
                 setTimeout(() => {
                     writeFile(economyData, JSON.stringify(data, null, 1), (err) =>{ if(err) console.log(err) })

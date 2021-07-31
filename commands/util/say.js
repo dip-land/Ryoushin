@@ -8,7 +8,7 @@ module.exports = {
     category: 'utility',
     nsfw: false,
     disabled: false,
-    permissions: 'ADMINISTATOR',
+    permissions: 'ADMINISTRATOR',
     execute(message, args){
         let sayMessage = args.join(" ");
         if(!args[0]){ message.channel.send('You must give me something to say.')} 

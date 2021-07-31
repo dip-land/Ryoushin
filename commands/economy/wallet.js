@@ -9,7 +9,7 @@ module.exports = {
     category: 'economy',
     nsfw: false,
     disabled: false,
-    permissions: 'ADMINISTATOR',
+    //permissions: '',
     execute(message, args){
         const client = message.client;
         let mention = message.mentions.users.first(), user1 = args[0] || message.author.id;

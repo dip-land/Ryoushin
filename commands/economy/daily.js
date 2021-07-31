@@ -13,7 +13,6 @@ module.exports = {
     //permissions: '',
     execute(message, args){
         const day = new Date(Date.now()), user = data.users[message.author.id], claimed = random(7000, 9000)
-        //`Reset in ${Math.abs(day.getUTCHours() - 24)} hours, ${Math.abs(day.getUTCMinutes() - 60)} minutes and ${Math.abs(day.getUTCSeconds() - 60)} seconds`
         if(user.daily_claimed === false){
             user.money = user.money + claimed; user.daily_claimed = true
             message.channel.send({embeds: [

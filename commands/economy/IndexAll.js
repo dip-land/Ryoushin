@@ -9,7 +9,7 @@ module.exports = {
     category: 'economy',
     nsfw: false,
     disabled: true,
-    permissions: 'ADMINISTATOR',
+    permissions: 'ADMINISTRATOR',
     execute(message, args){
         if(!data.users){data.users = {}}
         message.client.guilds.fetch('864435982858321920').then(guild =>{
@@ -17,11 +17,7 @@ module.exports = {
                 members.forEach(member => {
                     if(!data.users[member.user.id]){
                         if(member.bot){return;}
-                        data.users[member.user.id] = {
-                            money : 10000,
-                            last_stolen : Date.now(),
-                            daily_claimed : false
-                        }
+                        data.users[member.user.id] = {money : 10000, last_stolen : Date.now(), daily_claimed : false}
                     }
                 })
                 setTimeout(() => {
