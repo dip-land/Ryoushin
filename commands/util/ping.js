@@ -12,7 +12,7 @@ module.exports = {
     //permissions: '',
     execute(message){
         const client = message.client, APIPing = Math.round(client.ws.ping)+ "ms";
-        message.channel.send('Loading data').then (msg =>{
+        message.channel.send('```Loading...```').then (msg =>{
             msg.delete(); const ping = Math.abs(msg.createdTimestamp - message.createdTimestamp);
             message.channel.send({ embeds: [new MessageEmbed().setDescription(`**Latency:** ${ping}ms \n**APIGateway:** ${APIPing}`).setColor(colors.main)]})
         })

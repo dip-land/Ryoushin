@@ -1,4 +1,4 @@
-const { Collection } = require('discord.js'), { toHMS } = require('./functions');
+const { Collection } = require('discord.js'), { toHMS } = require('../functions');
 module.exports = {
     execute(message, client, cooldowns, prefix) {
         if (prefix === undefined  || message.author.bot ) return;

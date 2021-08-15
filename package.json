@@ -4,12 +4,14 @@
   "description": "Discord bot for Ryoushin no Shakkin",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "eslint src",
+    "build": "npx tsc -p ./ && npm run start",
+    "start": "node --experimental-json-modules ."
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^13.0.0-dev.t1627689836.ee3cdc8",
+    "discord.js": "^13.1.0",
     "dotenv": "^10.0.0",
     "glob": "^7.1.7",
     "moment": "^2.29.1",

@@ -1,7 +1,7 @@
-const {writeFile} = require('fs'), {economyData} = require('./config.json')
+const {writeFile} = require('fs'), {economyData} = require('../config.json')
 module.exports = {
     join(member){
-        const data = require('./data.json');
+        const data = require('../data.json');
         if(!data.users){data.users = {}}
         if(!data.users[member.user.id]){
             if(member.bot){return;}
@@ -15,7 +15,7 @@ module.exports = {
     },
     start(){
         setInterval(() => {
-            const data = require('./data.json'), today = new Date(Date.now()).getUTCDay();
+            const data = require('../data.json'), today = new Date(Date.now()).getUTCDay();
             if(data.update === today){
                 for (const [key, value] of Object.entries(data.users)) {
                     if(value.daily_claimed){data.users[key].daily_claimed = false}
@@ -29,7 +29,7 @@ module.exports = {
             if(today === 5){data.update = 6}
             if(today === 6){data.update = 7}
             if(today === 7){data.update = 0}
-            if(data !== data){
+            if(today === data.update){
                 setTimeout(() => {writeFile(economyData, JSON.stringify(data, null, 1), (err) =>{ if(err) console.log(err) })}, 2000)
             }
         }, 6000)

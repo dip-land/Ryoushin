@@ -1,4 +1,4 @@
-const {activity} = require('./config.json'), size = Object.keys(activity).length;
+const {activity} = require('../config.json'), size = Object.keys(activity).length;
 require('dotenv').config();
 module.exports = {
     async start(client){
