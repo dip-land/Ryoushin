@@ -1,4 +1,6 @@
-const feeds = require('../../feeds.json'), {MessageEmbed} = require('discord.js'), {colors} = require('../../config.json');
+const {colors, feedsJson} = require('../../config.json');
+const feeds = require(feedsJson);
+const {MessageEmbed} = require('discord.js');
 module.exports = {
     name: 'Feeds',
     aliases: ['viewfeeds'],
@@ -13,11 +15,11 @@ module.exports = {
     execute(message, args){
         const data = [], client = message.client;
         feeds.forEach(feed => {
-            data.push(`**${feed.name}**`)
+            data.push(`**⋄ ${feed.name}**`)
             data.push(`Refresh Rate: ${feed.cooldown} seconds`)
             data.push(`Channel: <#${feed.channel}>`)
             data.push(`Link: ${feed.link}\n`)
         });
-        message.channel.send({ embeds: [new MessageEmbed().setAuthor("Feed List", client.user.displayAvatarURL()).setDescription(data.join('\n')).setColor(colors.main)]})
+        message.channel.send({embeds:[new MessageEmbed().setAuthor("Feed List", client.user.displayAvatarURL()).setDescription(data.join('\n')).setColor(colors.main)]})
     }
 }

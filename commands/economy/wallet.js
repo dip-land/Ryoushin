@@ -1,4 +1,6 @@
-const {MessageEmbed} = require('discord.js'), data = require('../../data.json'), {colors} = require('../../config.json')
+const {colors, economyData} = require('../../config.json');
+const data = require(economyData);
+const {MessageEmbed} = require('discord.js');
 module.exports = {
     name: 'Wallet',
     aliases: ['balance', 'bal'],
@@ -22,7 +24,7 @@ module.exports = {
                 .setColor(colors.main)
             ]})
         }else{
-            message.channel.send('User doesn\'t have a wallet...')
+            message.reply('User doesn\'t have a wallet...')
         }
     }
 }

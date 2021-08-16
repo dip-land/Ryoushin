@@ -11,7 +11,7 @@ module.exports = {
     permissions: 'ADMINISTRATOR',
     execute(message, args){
         let sayMessage = args.join(" ");
-        if(!args[0]){ message.channel.send('You must give me something to say.')} 
-        else {try{message.delete()}catch(error){} message.channel.send(sayMessage)}
+        if(!args[0]){message.channel.send('You must give me something to say.')} 
+        else{try{message.delete()}catch(error){}message.channel.send(sayMessage)}
     }
 }

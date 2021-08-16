@@ -1,4 +1,6 @@
-const {writeFile} = require('fs'), data = require('../../data.json'), {economyData} = require('../../config.json')
+const {economyData} = require('../../config.json');
+const data = require(economyData);
+const {writeFile} = require('fs');
 module.exports = {
     name: 'EconomyIndexAll',
     aliases: ['ecomia'],

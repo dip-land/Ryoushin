@@ -1,6 +1,10 @@
-const { MessageEmbed, version } = require('discord.js'), { colors } = require("../../config.json"), moment = require("moment"), fetch = require('node-fetch');;
+const {MessageEmbed, version} = require('discord.js');
+const {colors} = require("../../config.json");
+const moment = require("moment");
+const fetch = require('node-fetch');
 require('dotenv').config();
 require("moment-duration-format");
+
 module.exports = {
     name: 'Stats',
     aliases: ['bot', 'uptime', 'botinfo', 'botstats'],
@@ -21,8 +25,7 @@ module.exports = {
                         msg.delete();
                         message.channel.send({ embeds: [
                             new MessageEmbed()
-                            .setAuthor("Bot Information", client.user.displayAvatarURL({format: "png"}))
-                            .setDescription(`**Uptime:** ${uptime}\n**Web Status:** Fandom: \`${fs.statusText}\` | Twitter: \`${ts.statusText}\` | Reddit: \`${rs.statusText}\`\n**Memory Usage:** ${Math.round(process.memoryUsage().heapUsed / 1024 / 1024)}MB/${Math.round(process.memoryUsage().rss / 1024 / 1024)}MB\n**Latency:** Bot: ${msg.createdTimestamp - message.createdTimestamp}ms | API: ${Math.round(client.ws.ping)}ms\n**Versions:** Bot: ${process.env.version} | Nodejs: ${process.version} | Discordjs: v${version}`)
+                            .setDescription(`**⋄ Uptime:** ${uptime}\n**⋄ Web Status:** Fandom: \`${fs.statusText}\` | Twitter: \`${ts.statusText}\` | Reddit: \`${rs.statusText}\`\n**⋄ Memory Usage:** ${Math.round(process.memoryUsage().heapUsed / 1024 / 1024)}MB/${Math.round(process.memoryUsage().rss / 1024 / 1024)}MB\n**⋄ Latency:** MRT: ${msg.createdTimestamp - message.createdTimestamp}ms | API: ${Math.round(client.ws.ping)}ms\n**⋄ Versions:** Bot: ${process.env.version} | Nodejs: ${process.version} | Discordjs: v${version}`)
                             .setColor(colors.main)
                         ]})
                     })

@@ -1,4 +1,5 @@
-const { MessageEmbed } = require('discord.js'), { colors } = require("../../config.json");
+const {MessageEmbed} = require('discord.js');
+const {colors} = require("../../config.json");
 module.exports = {
     name: 'Ping',
     aliases: ['ping'],
@@ -11,10 +12,11 @@ module.exports = {
     disabled: false,
     //permissions: '',
     execute(message){
-        const client = message.client, APIPing = Math.round(client.ws.ping)+ "ms";
-        message.channel.send('```Loading...```').then (msg =>{
-            msg.delete(); const ping = Math.abs(msg.createdTimestamp - message.createdTimestamp);
-            message.channel.send({ embeds: [new MessageEmbed().setDescription(`**Latency:** ${ping}ms \n**APIGateway:** ${APIPing}`).setColor(colors.main)]})
+        const client = message.client, APIPing = Math.round(client.ws.ping)+"ms";
+        message.channel.send('```Loading...```').then(msg =>{
+            msg.delete(); 
+            const ping = Math.abs(msg.createdTimestamp - message.createdTimestamp);
+            message.channel.send({embeds:[new MessageEmbed().setDescription(`**⋄ Message Round Trip:** ${ping}ms \n**⋄ APIGateway:** ${APIPing}`).setColor(colors.main)]})
         })
     }
 }

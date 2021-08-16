@@ -1,21 +1,16 @@
-const { Client, Collection } = require("discord.js");
-const { prefixes } = require("./config.json");
-const client = new Client({ 
-    intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_MEMBERS'],
-    ws: { properties: { $browser: 'Discord iOS' } }
-})
-
-require('dotenv').config(); client.commands = new Collection(); 
+const {Client, Collection} = require("discord.js");
+const {prefixes} = require("./config.json");
+const client = new Client({ intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_MEMBERS'], ws: { properties: { $browser: 'Discord iOS' }}})
 const cooldowns = new Collection();
+client.commands = new Collection(); 
+require('dotenv').config(); 
 
 require("glob")('./Commands/**/*.js', function (err, res) {
-    res.forEach(async element => {try{const command = require(`${element}`);client.commands.set(command.name.toLowerCase(), command)}catch(err){console.log(err)}});
+    res.forEach(async cmd => {try{const command = require(`${cmd}`);client.commands.set(command.name.toLowerCase(), command)}catch(err){console.log(err)}});
 })
 
 client.on('ready', () =>{
-    require('./rss/fandom.js').start(client);
-    require('./rss/reddit.js').start(client);
-    require('./rss/twitter.js').start(client);
+    require('./feeds/feed.js').start(client);
     require('./handlers/activity.js').start(client);
     require('./handlers/economy.js').start();
     console.log(`online`);
@@ -23,13 +18,13 @@ client.on('ready', () =>{
 
 client.on('messageCreate', message =>{
     const prefix = prefixes.find(p => message.content.startsWith(p));
-    try {require('./handlers/command.js').execute(message, client, cooldowns, prefix)} catch(error) {console.error(error)}
+    try {require('./handlers/command.js').execute(message, client, cooldowns, prefix)} catch(error){console.error(error)}
 });
 
 client.on('messageUpdate', message => {
     const newMessage = message.reactions.message, prefix = prefixes.find(p => message.content.startsWith(p));
     newMessage.guild = message.guild; newMessage.createdTimestamp = newMessage.editedTimestamp;
-    try {require('./handlers/command.js').execute(newMessage, client, cooldowns, prefix)} catch(error) {console.error(error)}
+    try {require('./handlers/command.js').execute(newMessage, client, cooldowns, prefix)} catch(error){console.error(error)}
 })
 
 client.on('guildMemberAdd', member => {

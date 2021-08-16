@@ -1,5 +1,8 @@
-const {writeFile} = require('fs'), data = require('../../data.json'), {MessageEmbed} = require('discord.js'), {random} = require('../../functions'), 
- {colors, economyData} = require('../../config.json');
+const {colors, economyData} = require('../../config.json');
+const data = require(economyData);
+const {writeFile} = require('fs');
+const {MessageEmbed} = require('discord.js');
+const {random} = require('../../functions.js');
 module.exports = {
     name: 'Daily',
     aliases: ['daily', 'claimdaily'],

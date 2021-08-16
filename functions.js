@@ -1,15 +1,8 @@
-function imageExists(url, callback) {
-    let img = new Image();
-    img.onload = function() { callback(true); };
-    img.onerror = function() { callback(false); };
-    img.src = url;
-}
+function imageExists(url, callback){let img = new Image(); img.onload = function(){callback(true)}; img.onerror = function(){callback(false)}; img.src = url}
 
-function random(min, max) {
-    return Math.floor(Math.random() * (max - min) ) + min;
-  }
+function random(min, max){return Math.floor(Math.random() * (max - min)) + min}
 
-function roundToTwo(num) {return +(Math.round(num + "e+2")  + "e-2");}
+function roundToTwo(num){return +(Math.round(num + "e+2")  + "e-2")}
 
 function toHMS(num, show_full) {
     if(show_full === false){
@@ -23,8 +16,8 @@ function toHMS(num, show_full) {
     }
 }
 
-function abrvNum(num, fixed) {
-    let NumAbbr = require('number-abbreviate'), numAbbr = new NumAbbr(['k', 'm', 'b', 't', 'q', 'Q', 's', 'S', 'o', 'n', 'd', 'u'])
+function abrvNum(num, fixed){
+    let NumAbbr = require('number-abbreviate'), numAbbr = new NumAbbr(['k', 'm', 'b', 't', 'q', 'Q', 's', 'S', 'o', 'n', 'd', 'u']);
     return numAbbr.abbreviate(num, fixed)
 }
 
@@ -47,6 +40,6 @@ function progressBar(ctx, x, y, w, h, radius, color, percent){
     ctx.strokeStyle = 'rgba(0,0,0,0)';
 }
 
-function text(ctx, text, posX, posY, font, color, align, maxWidth){ctx.font = font;ctx.fillStyle = color;ctx.textAlign = align;ctx.fillText(text,posX,posY,maxWidth)}
+function text(ctx, text, posX, posY, font, color, align, maxWidth){ctx.font = font; ctx.fillStyle = color; ctx.textAlign = align; ctx.fillText(text,posX,posY,maxWidth)}
 
 module.exports = { imageExists, random, roundToTwo, toHMS, abrvNum, text, progressBar }

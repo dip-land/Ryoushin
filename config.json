@@ -1,6 +1,6 @@
 {  
     "activity": {
-        "0" : {"desc" : "r!commands", "type" : "PLAYING"},
+        "0" : {"desc" : "r!cmds", "type" : "PLAYING"},
         "1" : {"desc" : "Reading Ryoushin no Shakkin Volume 2", "type" : "PLAYING"}
     },
     "colors": {
@@ -20,7 +20,8 @@
         "orange": "#F57731",
         "offWhite": "#CCCCCC"
     },
-    "feedsData" : "C:/Bots/DiscordBots/Ryoushin/rss/data/data.json",
+    "feedsData" : "C:/Bots/DiscordBots/Ryoushin/feeds/data.json",
+    "feedsJson" : "C:/Bots/DiscordBots/Ryoushin/feeds/feeds.json",
     "economyData" : "C:/Bots/DiscordBots/Ryoushin/data.json",
     "prefixes": ["r!", "<@!865314373504335912> ", "<@!865314373504335912>"]
 }
