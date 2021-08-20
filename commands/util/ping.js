@@ -16,7 +16,7 @@ module.exports = {
         message.channel.send('```Loading...```').then(msg =>{
             msg.delete(); 
             const ping = Math.abs(msg.createdTimestamp - message.createdTimestamp);
-            message.channel.send({embeds:[new MessageEmbed().setDescription(`**⋄ Message Round Trip:** ${ping}ms \n**⋄ APIGateway:** ${APIPing}`).setColor(colors.main)]})
+            message.channel.send({embeds:[new MessageEmbed().setDescription(`**• Message Round Trip:** ${ping}ms \n**• APIGateway:** ${APIPing}`).setColor(colors.main)]})
         })
     }
 }

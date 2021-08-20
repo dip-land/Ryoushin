@@ -11,7 +11,7 @@ module.exports = {
     description: 'Shows bots stats.',
     usage: '&&stats',
     examples: ['NONE'],
-    cooldown: 5,
+    cooldown: 25,
     category: 'utility',
     nsfw: false,
     disabled: false,
@@ -25,7 +25,7 @@ module.exports = {
                         msg.delete();
                         message.channel.send({ embeds: [
                             new MessageEmbed()
-                            .setDescription(`**⋄ Uptime:** ${uptime}\n**⋄ Web Status:** Fandom: \`${fs.statusText}\` | Twitter: \`${ts.statusText}\` | Reddit: \`${rs.statusText}\`\n**⋄ Memory Usage:** ${Math.round(process.memoryUsage().heapUsed / 1024 / 1024)}MB/${Math.round(process.memoryUsage().rss / 1024 / 1024)}MB\n**⋄ Latency:** MRT: ${msg.createdTimestamp - message.createdTimestamp}ms | API: ${Math.round(client.ws.ping)}ms\n**⋄ Versions:** Bot: ${process.env.version} | Nodejs: ${process.version} | Discordjs: v${version}`)
+                            .setDescription(`**• Uptime:** ${uptime}\n**• Web Status:** Fandom: \`${fs.statusText}\` | Twitter: \`${ts.statusText}\` | Reddit: \`${rs.statusText}\`\n**• Memory Usage:** ${Math.round(process.memoryUsage().heapUsed / 1024 / 1024)}MB/${Math.round(process.memoryUsage().rss / 1024 / 1024)}MB\n**• Latency:** MRT: ${msg.createdTimestamp - message.createdTimestamp}ms | API: ${Math.round(client.ws.ping)}ms\n**• Versions:** Bot: ${process.env.version} | Nodejs: ${process.version} | Discordjs: v${version}`)
                             .setColor(colors.main)
                         ]})
                     })
