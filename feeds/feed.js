@@ -83,7 +83,7 @@ module.exports = {
                             channel.send({embeds:[
                                 new MessageEmbed()
                                 .setAuthor(`${tweet.user.name} (@${tweet.user.screen_name})`, tweet.user.profile_image_url, `https://twitter.com/${tweet.user.screen_name}`)
-                                .setDescription(`${text.join('')} ${extra}\n\n[Click to view full tweet on Twitter](https://twitter.com/${tweet.user.screen_name}/status/${tweet.id_str})`)
+                                .setDescription(`${text} ${extra}\n\n[Click to view full tweet on Twitter](https://twitter.com/${tweet.user.screen_name}/status/${tweet.id_str})`)
                                 .setImage(media)
                                 .setColor(colors.main)
                                 .setFooter('Twitter', 'https://abs.twimg.com/icons/apple-touch-icon-192x192.png')

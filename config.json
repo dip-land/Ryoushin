@@ -1,10 +1,10 @@
 {  
     "activity": {
         "0" : {"desc" : "r!cmds", "type" : "PLAYING"},
-        "1" : {"desc" : "Reading Ryoushin no Shakkin Volume 2", "type" : "PLAYING"}
+        "1" : {"desc" : "Reading Ryoushin no Shakkin Volume 3", "type" : "PLAYING"}
     },
     "colors": {
-        "main": "#006cb0",
+        "main": "#fb047c",
         "purple": "#8E14FF",
         "reddit": "#FF5700",
         "osu": "#FF66AA",
