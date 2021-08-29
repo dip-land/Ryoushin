@@ -9,7 +9,13 @@
         "name":"Ryoushin no Shakkin Reddit: New Posts",
         "link":"https://www.reddit.com/r/RyoushinNoShakkin/new.rss",
         "channel":"864775472033038336",
-        "cooldown": 25
+        "cooldown": 35
+    },
+    "redditComments": {
+        "name": "Ryoushin no Shakkin Reddit: Comments",
+        "link": "http://www.reddit.com/r/RyoushinNoShakkin/comments/.json",
+        "channel": "868176065963642930",
+        "cooldown": 40
     },
     "twitter": {
         "name":"Twitter: @amane_kakuyomu New Posts",
