@@ -102,16 +102,7 @@ module.exports = {
                                     text = text.replace(`#${tag.text}`, `[#${tag.text}](https://twitter.com/hashtag/${tag.text})`)
                                 })
                                 tweet.entities.urls.forEach(u => {
-                                    if(/(https:\/\/twitter.com\/)\w+/g.test(u.expanded_url)){
-                                        let id = u.expanded_url.replace(/.+(?=status)status\//, '');
-                                        T.get('statuses/show/:id', { id: id }, function(err, data, res){
-                                            try{
-                                                let dqs = data.quoted_status;
-                                                extra.push(`\n\n**Tweet embed:** [${dqs.user.name} (@${dqs.user.screen_name})](${u.expanded_url})\n${dqs.text}`)
-                                                if(dqs.entities.media !== undefined){media = dqs.entities.media.media_url}
-                                            }catch(e){console.log(e); console.log("tweet", tweet, "data", data)}
-                                        })
-                                    }else{extra.push(`\n${u.expanded_url}`)}
+                                    extra.push(`\n${u.expanded_url}`)
                                 })
                                 channel.send({embeds:[
                                     new MessageEmbed()

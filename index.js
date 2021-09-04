@@ -4,6 +4,7 @@ const client = new Client({ intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_MEMBERS
 const cooldowns = new Collection();
 client.commands = new Collection(); 
 require('dotenv').config(); 
+require('os').setPriority(-20);
 
 require("glob")('./Commands/**/*.js', function (err, res) {
     res.forEach(async cmd => {try{const command = require(`${cmd}`);client.commands.set(command.name.toLowerCase(), command)}catch(err){console.log(err)}});
