@@ -82,6 +82,8 @@ module.exports = {
                                 writeData(data);
                             }
                         })
+                    }).catch(error => {
+                        console.log(`Reddit Comments Errored`, error)
                     })
                 }catch(err){}
             }).catch(console.error);

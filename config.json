@@ -20,8 +20,8 @@
         "orange": "#F57731",
         "offWhite": "#CCCCCC"
     },
-    "feedsData" : "C:/Bots/DiscordBots/Ryoushin/feeds/data.json",
-    "feedsJson" : "C:/Bots/DiscordBots/Ryoushin/feeds/feeds.json",
-    "economyData" : "C:/Bots/DiscordBots/Ryoushin/data.json",
+    "feedsData" : "c:/projects/DiscordBots/Ryoushin/feeds/data.json",
+    "feedsJson" : "c:/projects/DiscordBots/Ryoushin/feeds/feeds.json",
+    "economyData" : "c:/projects/DiscordBots/Ryoushin/data.json",
     "prefixes": ["r!", "<@!865314373504335912> ", "<@!865314373504335912>"]
 }
